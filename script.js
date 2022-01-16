@@ -21,7 +21,18 @@
         }
     }
 
-    function showError(ele) {
+    form.addEventListener('submit', function(event) {
+        inputs.forEach( ele => {
+            if(!ele.validity.valid) {
+                showError(ele);
+                event.preventDefault();
+            } else if(ele === confirmPassword) {
+                showError(ele, event);
+            }
+        })
+    });
+
+    function showError(ele, event) {
         let error;
         switch (ele) {
             case email:
@@ -58,8 +69,12 @@
                 break;
             case confirmPassword:
                 error = document.querySelector('.confirm-password.error');
-                if(confirmPassword.value !== password.value) {
-                    error.textContent = "Error: Passwords do not match"
+                if(confirmPassword.validity.valueMissing) {
+                    error.textContent = "Error: Please fill confirm password";
+                    if(event !== undefined) event.preventDefault();
+                } else if(confirmPassword.value !== password.value) {
+                    error.textContent = "Error: Passwords do not match";
+                    if(event !== undefined) event.preventDefault();
                 } else {
                     error.textContent = "";
                 }
