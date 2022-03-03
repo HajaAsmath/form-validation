@@ -6,33 +6,31 @@
 <body>
     <form novalidate>
         <div>
-            <label for="email">Email: </label>
-            <input class='input' id="email" type="email" required>
+            <input class='input' id="email" type="email" placeholder=" " required>
+            <label for="email">Email</label>
             <span class="email error"></span>
         </div>
         <div>
-            <label for="country">Country: </label>
-            <input class='input' id="country" type="text" required>
+            <input class='input' id="country" type="text" placeholder=" "  required>
+            <label for="country">Country</label>
             <span class="country error"></span>
         </div>
         <div>
-            <label for="zip">Zip Code: </label>
-            <input class='input' id="zip" type="number" minlength="5" required>
+            <input class='input' id="zip" type="number" minlength="5" placeholder=" "  required>
+            <label for="zip">Zip Code</label>
             <span class="zip error"></span>
         </div>
         <div>
-            <label for="password">Password: </label>
-            <input class='input' id="password" type="password" minlength="8" maxlength="25" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+            <input class='input' id="password" type="password" minlength="8" maxlength="25" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder=" "  required>
+            <label for="password">Password</label>
             <span class="password error"></span>
         </div>
         <div>
-            <label for="confirm-password">Confirm Password: </label>
-            <input class='input' id="confirm-password" type="password" required>
+            <input class='input' id="confirm-password" type="password" placeholder=" "  required>
+            <label for="confirm-password">Confirm Password</label>
             <span class="confirm-password error"></span>
         </div>
-        <div>
             <input id='submit' type="submit">
-        </div>
     </form>
 </body>
 <script src="script.js"></script>
